@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:user][:email])
     if user && user.authenticate(params[:user][:password])
-      token = create_token(user.id, user.email)
+      token = create_token(user.id, user.email, user.store_name)
       render json: {status: 200, token: token, user: user}
     else
       render json: {status: 401, message: "Either your email or password is incorrect."}
@@ -65,18 +65,19 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :password, :store_name)
     end
 
-    def create_token(id, email)
-      JWT.encode(payload(id, email), ENV['JWT_SECRET'], 'HS256')
+    def create_token(id, email, store_name)
+      JWT.encode(payload(id, email, store_name), ENV['JWT_SECRET'], 'HS256')
     end
 
-    def payload(id, email)
+    def payload(id, email, store_name)
       {
         exp: (Time.now + 120.minutes).to_i,
         iat: Time.now.to_i,
         iss: ENV['JWT_ISSUER'],
         user: {
           id: id,
-          email: email
+          email: email,
+          store_name: store_name
         }
       }
     end
