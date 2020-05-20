@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  qty: 1
+  name: MyString
+  price_per_item: 9.99
+  total_cost: 9.99
+  date: 2020-05-18
+
+two:
+  category: MyString
+  qty: 1
+  name: MyString
+  price_per_item: 9.99
+  total_cost: 9.99
+  date: 2020-05-18

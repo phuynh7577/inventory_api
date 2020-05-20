@@ -5,6 +5,8 @@ class User < ApplicationRecord
     validate :password_contains_number
     has_secure_password
 
+    has_many :inventories
+
     def password_uppercase
         return if !!password.match(/\p{Upper}/)
         errors.add :password, ' must contain at least 1 uppercase '

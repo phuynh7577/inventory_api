@@ -4,16 +4,31 @@ class UsersController < ApplicationController
   before_action :authorize_user, except: [:login, :create, :index]
 
   # GET /users
-  def index
-    @users = User.all
+  # def index
+  #   @users = User.all
 
-    render json: @users
-  end
+  #   render json: @users
+  # end
 
   # GET /users/1
   def show
-    render json: get_current_user
+    # render json: get_current_user
+    render json: get_current_user.to_json(include: :inventories)
   end
+
+  # # PATCH/PUT /users/1
+  # def update
+  #   if @user.update(user_params)
+  #     render json: @user
+  #   else
+  #     render json: @user.errors, status: :unprocessable_entity
+  #   end
+  # end
+
+  # # DELETE /users/1
+  # def destroy
+  #   @user.destroy
+  # end
 
   # POST /users
   def create
@@ -21,26 +36,12 @@ class UsersController < ApplicationController
 
     if @user.save
       user = User.find_by(email: params[:user][:email])
-      token = create_token(user.id, user.email)
+      token = create_token(user.id, user.email, user.store_name)
       # render json: @user, status: :created, location: @user
       render json: { status: 201, token: token, user: user }
     else
       render json: @user.errors, status: :unprocessable_entity
     end
-  end
-
-  # PATCH/PUT /users/1
-  def update
-    if @user.update(user_params)
-      render json: @user
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /users/1
-  def destroy
-    @user.destroy
   end
 
   # LOGIN /users/login
@@ -78,7 +79,7 @@ class UsersController < ApplicationController
           id: id,
           email: email,
           store_name: store_name
-        }
       }
+    }
     end
 end
