@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
     has_many :inventories
 
+    # , -> { order(:inventories) }
+   
+
     def password_uppercase
         return if !!password.match(/\p{Upper}/)
         errors.add :password, ' must contain at least 1 uppercase '
@@ -28,4 +31,6 @@ class User < ApplicationRecord
         return if password.count("0-9") > 0
         errors.add :password, ' must contain at least one number'
       end
+
+      
 end
