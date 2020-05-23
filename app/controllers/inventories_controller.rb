@@ -1,9 +1,9 @@
 class InventoriesController < ApplicationController
-  # before_action :set_inventory, only: [:show, :update, :destroy]
+  before_action :set_inventory, only: [:update, :destroy]
 
   # GET /inventories
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.all.reverse_each
 
     render json: @inventories
   end
@@ -17,23 +17,21 @@ class InventoriesController < ApplicationController
   def create
     @inventory = Inventory.new(inventory_params)
     @inventory.user_id = params[:user_id]
-
     if @inventory.save
-      @inventory.created_at.to_date
       render json: @inventory, status: :created
     else
       render json: @inventory.errors, status: :unprocessable_entity
     end
   end
 
-  # # PATCH/PUT /inventories/1
-  # def update
-  #   if @inventory.update(inventory_params)
-  #     render json: @inventory
-  #   else
-  #     render json: @inventory.errors, status: :unprocessable_entity
-  #   end
-  # end
+  # PATCH/PUT /inventories/1
+  def update
+    if @inventory.update(inventory_params)
+      render json: @inventory
+    else
+      render json: @inventory.errors, status: :unprocessable_entity
+    end
+  end
 
   # DELETE /inventories/1
   def destroy
@@ -48,6 +46,6 @@ class InventoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def inventory_params
-      params.require(:inventory).permit(:category, :qty, :name, :price_per_item, :total_cost)
+      params.require(:inventory).permit(:category, :qty, :name, :price_per_item, :total_cost, :date)
     end
 end

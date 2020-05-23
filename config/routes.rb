@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :inventories, only: [:index, :create, :destroy]
+  resources :inventories, only: [:index, :create, :destroy, :update]
   
   resources :users, only: [:create, :login, :index] do
-    resources :inventories, only: [:create]
+    resources :inventories, only: [:create, :update]
   end
   
   resources :inventories
