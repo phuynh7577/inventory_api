@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2020_05_23_060120) do
     t.string "category"
     t.integer "qty"
     t.string "name"
-    t.decimal "price_per_item", precision: 8, scale: 2
-    t.decimal "total_cost", precision: 8, scale: 2
+    t.integer "price_per_item"
+    t.integer "total_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

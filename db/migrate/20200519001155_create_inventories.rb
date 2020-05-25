@@ -4,8 +4,8 @@ class CreateInventories < ActiveRecord::Migration[6.0]
       t.string :category, require: true
       t.integer :qty, require: true
       t.string :name, require: true
-      t.decimal :price_per_item, precision: 8, scale: 2
-      t.decimal :total_cost, precision: 8, scale: 2
+      t.integer :price_per_item
+      t.integer :total_cost
 
       t.timestamps
     end
