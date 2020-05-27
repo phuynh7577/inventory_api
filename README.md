@@ -1,8 +1,9 @@
 ## Liquor-IQ
 An app for liquor store owners that allows them to track their inventories.
 
-test account: test@test.com
-test password: test123
+* test account: test@test.com
+
+* test password: test123
 
 ## Link to front-end and back-end
 * https://liquor-iq.herokuapp.com/
