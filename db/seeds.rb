@@ -7,10 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create([
-    {email: "vukidd@yahoo.com", password: "Benjamin1!", store_name: "Lets Rock and Roll"}
-])
-
 
 # Inventory.create([
 #     # {category: "beer", qty: 100, name: "CORS Light 30rack", price_per_item: 26.99, total_cost: 1600.00, user_id: 1},
