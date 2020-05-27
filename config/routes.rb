@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  
   resources :inventories, only: [:index, :create, :destroy, :update]
   
   resources :users, only: [:create, :login, :index] do
