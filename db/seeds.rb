@@ -9,15 +9,15 @@
 
 
 Inventory.create([
-    {category: "Beer", qty: 100, name: "CORS Light 30 Rack", price_per_item: 26, total_cost: 1600, user_id: 1},
-    {category: "Beer", qty: 100, name: "Bud Light 30 Rack", price_per_item: 22, total_cost: 1900, user_id: 1},
-    {category: "Beer", qty: 25, name: "White Clam", price_per_item: 59.99, total_cost: 1100, user_id: 1},
+    {category: "Beer", qty: 100, name: "CORS Light 30 Rack", price_per_item: 26, total_cost: 1400, user_id: 1},
+    {category: "Beer", qty: 100, name: "Bud Light 30 Rack", price_per_item: 22, total_cost: 1700, user_id: 1},
+    {category: "Beer", qty: 25, name: "White Clam", price_per_item: 59.99, total_cost: 900, user_id: 1},
     {category: "Beer", qty: 63, name: "Rogers", price_per_item: 7, total_cost: 900, user_id: 1},
-    {category: "Beer", qty: 40, name: "Bud Light 30 Rack", price_per_item: 32, total_cost: 1000, user_id: 1},
-    {category: "Beer", qty: 100, name: "CORS Light 30rack", price_per_item: 26.99, total_cost: 1400, user_id: 1},
-    {category: "Beer", qty: 100, name: "Stella 6 Pack", price_per_item: 14, total_cost: 1100, user_id: 1},
-    {category: "Beer", qty: 26, name: "Guinness", price_per_item: 18, total_cost: 1100, user_id: 1},
-    {category: "Beer", qty: 100, name: "Corona 12 Pack", price_per_item: 18, total_cost: 1200, user_id: 1},
+    {category: "Beer", qty: 40, name: "Bud Light 30 Rack", price_per_item: 32, total_cost: 850, user_id: 1},
+    {category: "Beer", qty: 100, name: "CORS Light 30rack", price_per_item: 26.99, total_cost: 900, user_id: 1},
+    {category: "Beer", qty: 100, name: "Stella 6 Pack", price_per_item: 14, total_cost: 1200, user_id: 1},
+    {category: "Beer", qty: 26, name: "Guinness", price_per_item: 18, total_cost: 800, user_id: 1},
+    {category: "Beer", qty: 100, name: "Corona 12 Pack", price_per_item: 18, total_cost: 1000, user_id: 1},
 
     {category: "Wine", qty: 30, name: "Apothic Red", price_per_item: 20, total_cost: 425, user_id: 1},
     {category: "Wine", qty: 25, name: "Oyster Bar", price_per_item: 29, total_cost: 621, user_id: 1},
@@ -50,6 +50,16 @@ Inventory.create([
     {category: "Saky", qty: 70, name: "Tozai", price_per_item: 30, total_cost: 779, user_id: 1},
     {category: "Saky", qty: 35, name: "Dassai", price_per_item: 19, total_cost: 520, user_id: 1},
     {category: "Saky", qty: 150, name: "Ozeki Nigori", price_per_item: 13, total_cost: 850, user_id: 1},
+
+
+
+
+
+
+
+
+
+
 
     {category: "Vodka", qty: 30, name: "Smirnoff", price_per_item: 20, total_cost: 425, user_id: 1},
     {category: "Vodka", qty: 25, name: "Absolute Vodka", price_per_item: 22, total_cost: 400, user_id: 1},
